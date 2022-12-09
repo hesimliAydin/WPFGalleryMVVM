@@ -44,13 +44,13 @@
                 </MenuItem>
                 <MenuItem Header="View">
                     <MenuItem Header="Medium"
-                              Click="MenuItem_Click_1"></MenuItem>
+                              Command="{Binding MenuItemCommand1}"></MenuItem>
                     <MenuItem Header="Small Icons"
-                              Click="MenuItem_Click"></MenuItem>
+                              Command="{Binding MenuItemCommand}"></MenuItem>
                     <MenuItem Header="Large"
-                              Click="MenuItem_Click_2"></MenuItem>
+                             Command="{Binding MenuItemCommand2}"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="About" Click='MenuItem_Click_3'>
+                <MenuItem Header="About" Command="{Binding MenuItemCommand3}">
 
                 </MenuItem>
 
@@ -63,7 +63,7 @@
                     Height="60"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Click="Button_Click1"
+                    Command="{Binding ButtonClickCommand1}"
                     BorderThickness="0">
                 <Image Width="50"
                        Height="50"
@@ -173,25 +173,25 @@
                         Content="Prev"
                         Width="100"
                         Style="{StaticResource GreenButton}"
-                        Click="PrevBtn_Click"/>
+                        Command="{Binding PrevBtnCommand}"/>
 
                 <Button x:Name="PauseBtn"
                         Margin="20,5,0,5"
                         Content="Pause"
                         Width="100"
                         Style="{StaticResource  GreenButton}"
-                        Click="PauseBtn_Click"/>
+                        Command="{Binding PauseBtnCommand}"/>
 
                 <Button x:Name="autoplayCeBtn" Style="{StaticResource AutoPlay}"
                         Margin="20,5,0,5"
                         Content="autoPlay"
-                        Width="140" Click="autoplayCeBtn_Click"/>
+                        Width="140" Command="{Binding AutoPlayBtnCommand}"/>
 
                 <Button x:Name="nextBtn"
                         Margin="20,5,0,5"
                         Content="Next"
                         Width="100"
-                        Style="{StaticResource GreenButton}" Click="nextBtn_Click"/>
+                        Style="{StaticResource GreenButton}" Command="{Binding NextBtnCommand}"/>
 
 
 

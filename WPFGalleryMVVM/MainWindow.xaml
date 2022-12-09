@@ -34,7 +34,7 @@
 
                 </MenuItem>
 
-                <MenuItem Header="Exit" Click="MenuItem_Click4">
+                <MenuItem Header="Exit" Command="{Binding MenuItemCommand4}">
 
                 </MenuItem>
 
@@ -46,11 +46,11 @@
                 <MenuItem Header="Add Folder"/>
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Medium" Click="MenuItem_Click2"/>
-                <MenuItem Header="Small Icons" Click="MenuItem_Click"/>
-                <MenuItem Header="Large" Click="MenuItem_Click1"/>
+                <MenuItem Header="Medium" Command="{Binding MenuItemCommand2}"/>
+                <MenuItem Header="Small Icons" Command="{Binding MenuItemCommand}"/>
+                <MenuItem Header="Large" Command="{Binding MenuItemCommand1}"/>
             </MenuItem>
-            <MenuItem Header="About" Click="MenuItem_Click3">
+            <MenuItem Header="About" Command="{Binding MenuItemCommand3}">
 
             </MenuItem>
 
@@ -66,7 +66,7 @@
         <Grid Grid.Row="2">
 
             <ListBox Name="ListBox"
-                     ItemsSource="{Binding Imagess}"
+                     ItemsSource="{Binding Imagess, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      Background="LightGreen"
                      MouseDoubleClick="ListBox_MouseDoubleClick" >
