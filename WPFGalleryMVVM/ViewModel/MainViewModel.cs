@@ -37,7 +37,7 @@ namespace WPFGalleryMVVM.ViewModel
             {
                 var ListBox= d as ListBox;
 
-                if(ListBox.SelectedItem is Images item)
+                if(ListBox?.SelectedItem is Images item)
                 {
                     SecondPageViewModel secondPage = new SecondPageViewModel();
                     secondPage.image = item;

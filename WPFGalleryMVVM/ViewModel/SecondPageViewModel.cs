@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Windows;
 using WPFGalleryMVVM.Command;
 using WPFGalleryMVVM.Model;
+using WPFGalleryMVVM.Windows;
 
 namespace WPFGalleryMVVM.ViewModel
 {
@@ -22,6 +24,7 @@ namespace WPFGalleryMVVM.ViewModel
         public RelayCommand MenuItemCommand2 { get; set; }
         public RelayCommand MenuItemCommand3 { get; set; }
         public RelayCommand MenuItemCommand { get; set; }
+        public RelayCommand MenuItemCommand4 { get; set; }
         public RelayCommand AutoPlayBtnCommand { get; set; }
         public RelayCommand PauseBtnCommand { get; set; }
         public RelayCommand NextBtnCommand { get; set; }
@@ -32,12 +35,13 @@ namespace WPFGalleryMVVM.ViewModel
         {
             ButtonClickCommand1 = new RelayCommand((o) =>
             {
-                
+                var page = new SecondPage();
+                page.Close();
             });
 
             MenuItemCommand1 = new RelayCommand((o) =>
             {
-
+                
             });
 
             MenuItemCommand2 = new RelayCommand((o) =>
@@ -55,9 +59,14 @@ namespace WPFGalleryMVVM.ViewModel
 
             });
 
+            MenuItemCommand4 = new RelayCommand((o) =>
+            {
+                
+            });
+
             AutoPlayBtnCommand = new RelayCommand((o) =>
             {
-
+                
             });
 
             PauseBtnCommand = new RelayCommand((o) =>
@@ -72,7 +81,12 @@ namespace WPFGalleryMVVM.ViewModel
 
             PrevBtnCommand = new RelayCommand((o) =>
             {
-
+                if (index > 0)
+                {
+                    image = compyImage[index - 1];
+                    index -= 1;
+                    
+                }
             });
 
 
