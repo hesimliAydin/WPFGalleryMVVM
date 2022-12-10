@@ -65,11 +65,16 @@
         </Grid>
         <Grid Grid.Row="2">
 
-            <ListBox Name="ListBox"
+            <ListBox Name="MyListBox"
                      ItemsSource="{Binding Imagess, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     Background="LightGreen"
-                     MouseDoubleClick="ListBox_MouseDoubleClick" >
+                     Background="LightGreen">
+
+                <MouseBinding Gesture="LeftDoubleClick"
+                                  Command="{Binding DoubleClickCommand}" CommandParameter="{Binding ElementName=MyListBox}">
+                
+                </MouseBinding>
+                
 
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>

@@ -182,7 +182,7 @@
                         Style="{StaticResource  GreenButton}"
                         Command="{Binding PauseBtnCommand}"/>
 
-                <Button x:Name="autoplayCeBtn" Style="{StaticResource AutoPlay}"
+                <Button x:Name="autoplayBtn" Style="{StaticResource AutoPlay}"
                         Margin="20,5,0,5"
                         Content="autoPlay"
                         Width="140" Command="{Binding AutoPlayBtnCommand}"/>

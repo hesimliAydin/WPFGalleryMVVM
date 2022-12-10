@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFGalleryMVVM.ViewModel;
 
 namespace WPFGalleryMVVM.Windows
 {
@@ -22,6 +23,8 @@ namespace WPFGalleryMVVM.Windows
         public SecondPage()
         {
             InitializeComponent();
+            var vm = new SecondPageViewModel();
+            this.DataContext = vm;
         }
     }
 }
