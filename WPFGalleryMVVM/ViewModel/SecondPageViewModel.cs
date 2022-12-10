@@ -16,7 +16,7 @@ namespace WPFGalleryMVVM.ViewModel
     {
         public Images image { get; set; }
         public int index;
-        public ObservableCollection<Images> compyImage { get; set; }
+        public List<Images> compyImage { get; set; }
 
 
         public RelayCommand ButtonClickCommand1 { get; set; }

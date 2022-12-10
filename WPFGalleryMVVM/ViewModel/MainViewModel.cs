@@ -19,8 +19,11 @@ namespace WPFGalleryMVVM.ViewModel
         public Images image { get;set;}
         public int index { get; set; }
 
-        public ObservableCollection<Images> Imagess = Repositories.FakeRepo.GetImages();
+        public ObservableCollection<Images> Imagess;
+
         
+
+
 
 
 
@@ -32,6 +35,8 @@ namespace WPFGalleryMVVM.ViewModel
         public RelayCommand MenuItemCommand4 { get; set; }
         public MainViewModel()
         {
+            Imagess = new ObservableCollection<Images>();
+            Imagess= new ObservableCollection<Images>(Repositories.FakeRepo.GetImages());
 
             DoubleClickCommand = new RelayCommand((d) =>
             {
@@ -42,7 +47,7 @@ namespace WPFGalleryMVVM.ViewModel
                     SecondPageViewModel secondPage = new SecondPageViewModel();
                     secondPage.image = item;
                     secondPage.index=ListBox.SelectedIndex;
-                    secondPage.compyImage = Imagess;
+                    //secondPage.compyImage = Imagess;
                     
                     
                     
