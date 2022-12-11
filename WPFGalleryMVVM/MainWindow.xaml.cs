@@ -29,7 +29,6 @@ namespace WPFGalleryMVVM
         {
             InitializeComponent();
             var vm = new MainViewModel();
-
             this.DataContext = vm;
 
 

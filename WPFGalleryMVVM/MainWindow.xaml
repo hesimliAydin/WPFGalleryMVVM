@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Gallery"
         Height="800"
-        Width="1200">
+        Width="1200"
+        Name="Window">
     <Grid Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
@@ -34,7 +35,7 @@
 
                 </MenuItem>
 
-                <MenuItem Header="Exit" Command="{Binding MenuItemCommand4}">
+                <MenuItem Header="Exit" Command="{Binding MenuItemCommand4}" CommandParameter="{Binding ElementName=Window}">
 
                 </MenuItem>
 
@@ -46,11 +47,11 @@
                 <MenuItem Header="Add Folder"/>
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Medium" Command="{Binding MenuItemCommand2}"/>
-                <MenuItem Header="Small Icons" Command="{Binding MenuItemCommand}"/>
-                <MenuItem Header="Large" Command="{Binding MenuItemCommand1}"/>
+                <MenuItem Header="Medium" Command="{Binding MediumCommand}" CommandParameter="{Binding ElementName=Window}"/>
+                <MenuItem Header="Small Icons" Command="{Binding SmallCommand}" CommandParameter="{Binding ElementName=Window}"/>
+                <MenuItem Header="Large" Command="{Binding LargeCommand}" CommandParameter="{Binding ElementName=Window}"/>
             </MenuItem>
-            <MenuItem Header="About" Command="{Binding MenuItemCommand3}">
+            <MenuItem Header="About" Command="{Binding AboutCommand}">
 
             </MenuItem>
 
@@ -70,10 +71,7 @@
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      Background="LightGreen">
 
-                <MouseBinding Gesture="LeftDoubleClick"
-                                  Command="{Binding DoubleClickCommand}" CommandParameter="{Binding ElementName=MyListBox}">
-                
-                </MouseBinding>
+               
                 
 
                 <ListBox.ItemsPanel>
@@ -106,7 +104,7 @@
 
 
                                     <StackPanel Grid.Row="0">
-                                        <Image x:Name="Image1"
+                                        <Image Name="Image1"
                                                Width="{DynamicResource ButtonFS}"
                                                Height="{DynamicResource ButtonFS}"
                                                Margin="0,8,0,0"

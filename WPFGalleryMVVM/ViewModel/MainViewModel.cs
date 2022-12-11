@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using WPFGalleryMVVM.Command;
 using WPFGalleryMVVM.Model;
@@ -19,7 +20,7 @@ namespace WPFGalleryMVVM.ViewModel
         public Images image { get;set;}
         public int index { get; set; }
 
-        public ObservableCollection<Images> Imagess;
+        public ObservableCollection<Images> Imagess { get; set; }
 
         
 
@@ -28,10 +29,10 @@ namespace WPFGalleryMVVM.ViewModel
 
 
         public RelayCommand DoubleClickCommand { get; set; }
-        public RelayCommand MenuItemCommand { get; set; }
-        public RelayCommand MenuItemCommand1 { get; set; }
-        public RelayCommand MenuItemCommand2 { get; set; }
-        public RelayCommand MenuItemCommand3 { get; set; }
+        public RelayCommand MediumCommand { get; set; }
+        public RelayCommand SmallCommand { get; set; }
+        public RelayCommand LargeCommand { get; set; }
+        public RelayCommand AboutCommand { get; set; }
         public RelayCommand MenuItemCommand4 { get; set; }
         public MainViewModel()
         {
@@ -40,37 +41,40 @@ namespace WPFGalleryMVVM.ViewModel
 
             DoubleClickCommand = new RelayCommand((d) =>
             {
-                var ListBox= d as ListBox;
+                var ListBox = d as ListBox;
 
-                if(ListBox?.SelectedItem is Images item)
+                if (ListBox?.SelectedItem is Images item)
                 {
                     SecondPageViewModel secondPage = new SecondPageViewModel();
                     secondPage.image = item;
-                    secondPage.index=ListBox.SelectedIndex;
+                    secondPage.index = ListBox.SelectedIndex;
                     //secondPage.compyImage = Imagess;
-                    
-                    
-                    
+
+
+
                 }
-                
+
             });
 
-            MenuItemCommand = new RelayCommand((o) =>
+            MediumCommand = new RelayCommand((o) =>
             {
-                
+                var w= o as Window;
+              w.Resources["ButtonFS"] = 150.0;
             });
 
-            MenuItemCommand1 = new RelayCommand((o) =>
+            SmallCommand = new RelayCommand((o) =>
             {
-
+                var w = o as Window;
+               w.Resources["ButtonFS"] = 50.0;
             });
 
-            MenuItemCommand2 = new RelayCommand((o) =>
+            LargeCommand = new RelayCommand((o) =>
             {
-
+                var w = o as Window;
+                w.Resources["ButtonFS"] = 250.0;
             });
 
-            MenuItemCommand3 = new RelayCommand((o) =>
+            AboutCommand = new RelayCommand((o) =>
             {
                 AboutWindow aboutWindow = new AboutWindow();
                 aboutWindow.ShowDialog();
@@ -78,7 +82,8 @@ namespace WPFGalleryMVVM.ViewModel
 
             MenuItemCommand4 = new RelayCommand((o) =>
             {
-
+                var w = o as Window;
+                w.Close();
             });
 
         }
