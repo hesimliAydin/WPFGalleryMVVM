@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 using WPFGalleryMVVM.Command;
 using WPFGalleryMVVM.Model;
 using WPFGalleryMVVM.Windows;
@@ -19,12 +21,10 @@ namespace WPFGalleryMVVM.ViewModel
         public List<Images> compyImage { get; set; }
 
 
-        public RelayCommand ButtonClickCommand1 { get; set; }
-        public RelayCommand MenuItemCommand1 { get; set; }
-        public RelayCommand MenuItemCommand2 { get; set; }
-        public RelayCommand MenuItemCommand3 { get; set; }
-        public RelayCommand MenuItemCommand { get; set; }
-        public RelayCommand MenuItemCommand4 { get; set; }
+        public RelayCommand BackCommand { get; set; }
+        public RelayCommand SmallCommand { get; set; }
+        public RelayCommand MediumCommand { get; set; }
+        public RelayCommand LargeCommand { get; set; }
         public RelayCommand AutoPlayBtnCommand { get; set; }
         public RelayCommand PauseBtnCommand { get; set; }
         public RelayCommand NextBtnCommand { get; set; }
@@ -33,36 +33,33 @@ namespace WPFGalleryMVVM.ViewModel
 
         public SecondPageViewModel()
         {
-            ButtonClickCommand1 = new RelayCommand((o) =>
+            BackCommand = new RelayCommand((o) =>
             {
                 var page = new SecondPage();
                 page.Close();
             });
 
-            MenuItemCommand1 = new RelayCommand((o) =>
+            MediumCommand = new RelayCommand((o) =>
             {
-                
+                var w = o as Window;
+                w.Resources["ButtonFS"] = 150.0;
             });
 
-            MenuItemCommand2 = new RelayCommand((o) =>
+            SmallCommand = new RelayCommand((o) =>
             {
-                
+                var w = o as Window;
+                w.Resources["ButtonFS"] = 50.0;
             });
 
-            MenuItemCommand3 = new RelayCommand((o) =>
+            LargeCommand = new RelayCommand((o) =>
             {
-
+                var w = o as Window;
+                w.Resources["ButtonFS"] = 250.0;
             });
 
-            MenuItemCommand = new RelayCommand((o) =>
-            {
+            DispatcherTimer timer=new DispatcherTimer();
 
-            });
-
-            MenuItemCommand4 = new RelayCommand((o) =>
-            {
-                
-            });
+            
 
             AutoPlayBtnCommand = new RelayCommand((o) =>
             {
@@ -88,6 +85,8 @@ namespace WPFGalleryMVVM.ViewModel
                     
                 }
             });
+
+           
 
 
         }

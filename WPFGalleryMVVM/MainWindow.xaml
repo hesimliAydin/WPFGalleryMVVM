@@ -35,7 +35,7 @@
 
                 </MenuItem>
 
-                <MenuItem Header="Exit" Command="{Binding MenuItemCommand4}" CommandParameter="{Binding ElementName=Window}">
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName=Window}">
 
                 </MenuItem>
 

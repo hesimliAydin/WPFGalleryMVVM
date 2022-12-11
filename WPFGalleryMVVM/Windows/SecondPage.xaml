@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFGalleryMVVM.Windows"
         mc:Ignorable="d"
-        Title="SecondPage" Height="450" Width="800">
+        Title="SecondPage"
+        Height="450"
+        Width="800"
+        Name="Window">
     <Grid Background="LightGreen">
 
         <Grid.RowDefinitions>
@@ -44,13 +47,13 @@
                 </MenuItem>
                 <MenuItem Header="View">
                     <MenuItem Header="Medium"
-                              Command="{Binding MenuItemCommand1}"></MenuItem>
+                              Command="{Binding MediumCommand}" CommandParameter="{Binding ElementName=Window}"></MenuItem>
                     <MenuItem Header="Small Icons"
-                              Command="{Binding MenuItemCommand}"></MenuItem>
+                              Command="{Binding SmallCommand}" CommandParameter="{Binding ElementName=Window}"></MenuItem>
                     <MenuItem Header="Large"
-                             Command="{Binding MenuItemCommand2}"></MenuItem>
+                             Command="{Binding LargeCommand}" CommandParameter="{Binding ElementName=Window}"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="About" Command="{Binding MenuItemCommand3}">
+                <MenuItem Header="About" Command="{Binding AboutCommand}">
 
                 </MenuItem>
 
@@ -63,7 +66,7 @@
                     Height="60"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Command="{Binding ButtonClickCommand1}"
+                    Command="{Binding BackCommand}"
                     BorderThickness="0">
                 <Image Width="50"
                        Height="50"

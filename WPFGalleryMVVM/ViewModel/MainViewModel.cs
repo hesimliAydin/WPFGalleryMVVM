@@ -33,7 +33,7 @@ namespace WPFGalleryMVVM.ViewModel
         public RelayCommand SmallCommand { get; set; }
         public RelayCommand LargeCommand { get; set; }
         public RelayCommand AboutCommand { get; set; }
-        public RelayCommand MenuItemCommand4 { get; set; }
+        public RelayCommand ExitCommand { get; set; }
         public MainViewModel()
         {
             Imagess = new ObservableCollection<Images>();
@@ -45,9 +45,8 @@ namespace WPFGalleryMVVM.ViewModel
 
                 if (ListBox?.SelectedItem is Images item)
                 {
-                    SecondPageViewModel secondPage = new SecondPageViewModel();
-                    secondPage.image = item;
-                    secondPage.index = ListBox.SelectedIndex;
+                    SecondPage secondPage = new SecondPage();
+                    
                     //secondPage.compyImage = Imagess;
 
 
@@ -80,7 +79,7 @@ namespace WPFGalleryMVVM.ViewModel
                 aboutWindow.ShowDialog();
             });
 
-            MenuItemCommand4 = new RelayCommand((o) =>
+            ExitCommand = new RelayCommand((o) =>
             {
                 var w = o as Window;
                 w.Close();
