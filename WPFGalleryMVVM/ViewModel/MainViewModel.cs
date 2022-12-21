@@ -22,11 +22,7 @@ namespace WPFGalleryMVVM.ViewModel
 
         public ObservableCollection<Images> Imagess { get; set; }
 
-        
-
-
-
-
+       
 
         public RelayCommand DoubleClickCommand { get; set; }
         public RelayCommand MediumCommand { get; set; }
@@ -43,7 +39,7 @@ namespace WPFGalleryMVVM.ViewModel
             {
                 var ListBox = d as ListBox;
 
-                if (ListBox?.SelectedItem is Images item)
+                if (ListBox.SelectedItem is Images item)
                 {
                     SecondPage secondPage = new SecondPage();
                     

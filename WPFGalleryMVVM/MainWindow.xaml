@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFGalleryMVVM"
+        xmlns:local="clr-namespace:WPFGalleryMVVM" xmlns:i="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic.Core"
         mc:Ignorable="d"
         Title="Gallery"
         Height="800"
@@ -69,10 +69,16 @@
             <ListBox Name="MyListBox"
                      ItemsSource="{Binding Imagess}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     Background="LightGreen">
-
-               
+                     Background="LightGreen"
+                     >
+                <!--<MouseBinding Gesture="LeftDoubleClick"
+                              Command="{Binding DoubleClickCommand}" CommandParameter="{Binding ElementName=MyListBox}"></MouseBinding>-->
                 
+
+
+
+
+
 
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
